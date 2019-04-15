@@ -23,8 +23,10 @@ x = [list(x) for x in zip(x,x1)]
 for i in range(len(x)):
 	x[i].insert(0,1)
 	theta.append(randrange(20))
+#Transforma as listas para Array
+theta = np.array(theta)
+x = np.array(x)
+y = np.array(y)
 
-theta = np.array([theta])
-x = np.array([x])
 
 
