@@ -1,6 +1,5 @@
 from ler_txt import *
 from random import randrange
-import numpy as np
 
 def hipotesis(i):
 	hip = 0
