@@ -1,18 +1,22 @@
 from ler_txt import *
+from random import randrange
+import numpy as np
 
-#função Hipotese (a função ".T" retorna o vetor Theta transposto)
+def hipotesis(i):
+	hip = 0
+	nvar = 3
+	for j in range(nvar):
+		hip+= x[i][j]*theta[j]
+	return hip
 
-def hipotesis(theta,x):
-	return x*theta
-
-def cost(x,theta):
+def cost():
+	j = 0
 	m = len(x)
-	soma = 0
 	for i in range(m):
-		soma+= pow((hipotesis(x[i],theta[i])-y[i]),2)
-	j = (1/2*m)*soma
+		j+= pow((hipotesis(i)-y[i]),2)
+	j*= (1/2*m)
 	return j
 
 def main():
-	print("custo = ",cost(x,theta))
+	print("custo = ",cost())
 main()
