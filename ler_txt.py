@@ -1,12 +1,11 @@
 import csv
-from random import randrange
-
+import numpy as np
 
 # inicializa os vetores/matrizes
 x = [[] for i in range(3)]
-theta = [randrange(100) for i in range(3)] #define o vetor de tamanho 3 com numeros aleatorios
+theta = np.random.rand(3) #define o vetor de tamanho 3 com numeros aleatorios entre 0 e 1
 y = []
-print(theta)
+
 
 #lendo txt e construindo a matriz X
 f = open('data.txt','r')  
@@ -16,5 +15,9 @@ for row in leitor_csv:
 	x[1].append(int(row[1])) #idade do peixe 
 	x[2].append(int(row[2])) #temperatura da água
 	y.append(int(row[3]))	#Comprimento do peixe
+
+x = np.array(x)
+y = np.array(y)
+theta = np.array(theta)
 
 
